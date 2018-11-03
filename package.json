@@ -1,0 +1,26 @@
+{
+  "name": "console-success",
+  "version": "0.0.1",
+  "description": "console.success function logs colored messages with success icon on terminal.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tufantunc/node-console-success.git"
+  },
+  "keywords": [
+    "success",
+    "logging",
+    "console.success",
+    "console",
+    "built-in"
+  ],
+  "author": "Tufan Tunç <https://tufantunc.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tufantunc/node-console-success/issues"
+  },
+  "homepage": "https://github.com/tufantunc/node-console-success#readme"
+}

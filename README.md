@@ -9,7 +9,6 @@ npm install console-success --save
 ```
 
 ## How to Use
-Just add it in your main app.
 ```js
 require('console-success');
 console.success(new Date()); // log time now

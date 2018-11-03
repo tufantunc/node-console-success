@@ -22,5 +22,5 @@ console.success('All test successfully completed'); // log text
 [downloads-url]: https://npmjs.org/package/console-success
 [license-image]: https://img.shields.io/:license-mit-blue.svg
 [license-url]: LICENSE.md
-[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20console-success%20by%20%40ttunc%20https%3A%2F%2Fgithub.com%2Ftufantunc%2Fnode-console-success%20%F0%9F%91%8D
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20console-success%20by%20%40tufant%20https%3A%2F%2Fgithub.com%2Ftufantunc%2Fnode-console-success%20%F0%9F%91%8D
 [twitter-badge]: https://img.shields.io/twitter/url/https/github.com/tufantunc/node-console-success.svg?style=social

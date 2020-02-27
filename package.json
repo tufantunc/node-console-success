@@ -1,10 +1,10 @@
 {
   "name": "console-success",
   "version": "0.0.3",
-  "description": "console.success function logs colored messages with success icon on terminal.",
-  "main": "index.js",
+  "description": "console.success function logs colored messages with success icon on terminal and browser console.",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup --config"
   },
   "repository": {
     "type": "git",
@@ -15,12 +15,20 @@
     "logging",
     "console.success",
     "console",
-    "built-in"
+    "built-in",
+    "browser",
+    "nodejs"
   ],
   "author": "Tufan Tunç <https://tufantunc.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tufantunc/node-console-success/issues"
   },
-  "homepage": "https://github.com/tufantunc/node-console-success#readme"
+  "homepage": "https://github.com/tufantunc/node-console-success#readme",
+  "dependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "^0.22.2",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "rollup": "^1.31.1"
+  },
+  "devDependencies": {}
 }

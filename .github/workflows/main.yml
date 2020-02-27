@@ -1,0 +1,31 @@
+name: RunTests
+
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Test & Create Code Coverages
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install Nodejs
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: Install Dependencies
+      run: npm install
+    - name: Run Tests
+      run: npm run test
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./.nyc_output/out.json
+        fail_ci_if_error: true

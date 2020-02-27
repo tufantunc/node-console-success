@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1582812800930" clover="3.2.0">
+  <project timestamp="1582812800931" name="All files">
+    <metrics statements="2" coveredstatements="2" conditionals="24" coveredconditionals="9" methods="3" coveredmethods="3" elements="29" coveredelements="14" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
+    <file name="index.js" path="/Users/tufan.tunc/Personal/node-console-success/dist/index.js">
+      <metrics statements="2" coveredstatements="2" conditionals="24" coveredconditionals="9" methods="3" coveredmethods="3"/>
+      <line num="1" count="1" type="cond" truecount="9" falsecount="15"/>
+      <line num="2" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

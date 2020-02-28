@@ -1,4 +1,4 @@
-# node-console-success [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][downloads-url] [![License][license-image]][license-url] [![twitter][twitter-badge]][twitter]
+# node-console-success [![NPM version][npm-image]][npm-url] [![codecov](https://codecov.io/gh/tufantunc/node-console-success/branch/master/graph/badge.svg)](https://codecov.io/gh/tufantunc/node-console-success) [![Downloads][downloads-image]][downloads-url] [![License][license-image]][license-url] [![twitter][twitter-badge]][twitter]
 > console.success function logs colored messages with success icon on terminal.
 
 ![console.success result image](/assets/sample.jpg)

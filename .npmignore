@@ -1,1 +1,9 @@
 assets/
+cypress/
+jest/
+.github/
+cypress.json
+jest.config.js
+yarn.lock
+rollup.config.js
+.gitignore

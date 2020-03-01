@@ -9,6 +9,8 @@ Sample result:
 This package supports most common browsers and node versions.
 To check this on your browser, [click here](https://codepen.io/tufantunc/pen/XWbggaa)
 
+It's only 584 bytes and 354 bytes gzipped.
+
 ## Install
 ```
 npm install console-success --save

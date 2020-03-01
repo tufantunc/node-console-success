@@ -1,6 +1,6 @@
 {
   "name": "console-success",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "console.success function logs colored messages with success icon on terminal and browser console.",
   "main": "dist/index.js",
   "scripts": {

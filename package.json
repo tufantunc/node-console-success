@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/tufantunc/node-console-success#readme",
   "dependencies": {
-    "@ampproject/rollup-plugin-closure-compiler": "^0.22.2",
+    "@ampproject/rollup-plugin-closure-compiler": "^0.23.0",
     "@rollup/plugin-commonjs": "^11.0.2",
     "rollup": "^1.32.0"
   },

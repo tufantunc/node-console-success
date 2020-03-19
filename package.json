@@ -37,12 +37,12 @@
   "dependencies": {
     "@ampproject/rollup-plugin-closure-compiler": "^0.24.0",
     "@rollup/plugin-commonjs": "^11.0.2",
-    "rollup": "^2.0.2"
+    "rollup": "^2.1.0"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^1.12.2",
+    "@cypress/code-coverage": "^1.14.0",
     "babel-plugin-istanbul": "^6.0.0",
-    "cypress": "^4.1.0",
+    "cypress": "^4.2.0",
     "istanbul-lib-coverage": "^3.0.0",
     "jest": "^25.1.0",
     "nyc": "^15.0.0"

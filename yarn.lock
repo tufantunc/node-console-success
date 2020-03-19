@@ -816,7 +816,7 @@
     lodash.clonedeep "4.5.0"
     watchify "3.11.1"
 
-"@cypress/code-coverage@^1.12.2":
+"@cypress/code-coverage@^1.14.0":
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/@cypress/code-coverage/-/code-coverage-1.14.0.tgz#fe03fc4c10d9f1e041ec53260d345c02f8c9f6e5"
   integrity sha512-uzfbqPgNnLlzRLDX5lrW54gdacfjTcgkEY03JCltEhRwptQm5dtAZtHgNs0zVCBk/t02C/mlTq11QAJMUINzNA==
@@ -2242,7 +2242,7 @@ cssstyle@^2.0.0:
   dependencies:
     cssom "~0.3.6"
 
-cypress@^4.1.0:
+cypress@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-4.2.0.tgz#45673fb648b1a77b9a78d73e58b89ed05212d243"
   integrity sha512-8LdreL91S/QiTCLYLNbIjLL8Ht4fJmu/4HGLxUI20Tc7JSfqEfCmXELrRfuPT0kjosJwJJZacdSji9XSRkPKUw==
@@ -2276,7 +2276,7 @@ cypress@^4.1.0:
     ospath "1.2.2"
     pretty-bytes "5.3.0"
     ramda "0.26.1"
-    request "github:cypress-io/request#b5af0d1fa47eec97ba980cde90a13e69a2afcd16"
+    request cypress-io/request#b5af0d1fa47eec97ba980cde90a13e69a2afcd16
     request-progress "3.0.0"
     supports-color "7.1.0"
     tmp "0.1.0"
@@ -5198,7 +5198,6 @@ request@^2.88.0:
 
 "request@github:cypress-io/request#b5af0d1fa47eec97ba980cde90a13e69a2afcd16":
   version "2.88.1"
-  uid b5af0d1fa47eec97ba980cde90a13e69a2afcd16
   resolved "https://codeload.github.com/cypress-io/request/tar.gz/b5af0d1fa47eec97ba980cde90a13e69a2afcd16"
   dependencies:
     aws-sign2 "~0.7.0"
@@ -5304,7 +5303,7 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rollup@^2.0.2:
+rollup@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.1.0.tgz#552e248e397a06b9c6db878c0564ca4ee06729c9"
   integrity sha512-gfE1455AEazVVTJoeQtcOq/U6GSxwoj4XPSWVsuWmgIxj7sBQNLDOSA82PbdMe+cP8ql8fR1jogPFe8Wg8g4SQ==

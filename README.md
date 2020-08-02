@@ -43,7 +43,7 @@ console.success("Hello world!");
 ## CDN
 Unpkg:
 ```
-https://unpkg.com/console-success@1.0.1/dist/index.js
+https://unpkg.com/console-success@1.0.2/dist/index.js
 ```
 JsDeliver:
 ```

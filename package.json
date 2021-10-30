@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "rollup --config",
-    "test": "jest && cypress run",
+    "test": "jest --runInBand && cypress run",
     "posttest": "npm run report:combined",
     "mkdir:reports": "mkdir reports || true",
     "precopy:reports": "npm run mkdir:reports",
@@ -13,7 +13,8 @@
     "precombine:reports": "npm run copy:reports && mkdir .nyc_output || true",
     "combine:reports": "nyc merge reports && mv coverage.json .nyc_output/out.json",
     "prereport:combined": "npm run combine:reports",
-    "report:combined": "nyc report --reporter lcov --report-dir coverage"
+    "report:combined": "nyc report --reporter lcov --report-dir coverage",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -43,8 +44,9 @@
     "@cypress/code-coverage": "^3.8.3",
     "babel-plugin-istanbul": "^6.0.0",
     "cypress": "^5.5.0",
+    "husky": "7.0.4",
     "istanbul-lib-coverage": "^3.0.0",
-    "jest": "^26.6.3",
+    "jest": "^27.3.1",
     "nyc": "^15.1.0"
   },
   "nyc": {

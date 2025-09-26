@@ -1,9 +1,50 @@
-assets/
-cypress/
-jest/
+# Test files and directories
+tests/
+test-results/
+playwright-report/
+vitest-coverage/
+
+# Development files
 .github/
-cypress.json
-jest.config.js
-yarn.lock
-rollup.config.js
+.husky/
 .gitignore
+.gitattributes
+
+# Build and config files
+vite.config.js
+playwright.config.ts
+vitest.config.js
+
+# Lock files (keep package-lock.json for consistency)
+yarn.lock
+pnpm-lock.yaml
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage and reports
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/

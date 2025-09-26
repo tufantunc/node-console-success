@@ -4,7 +4,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.js',
-      name: 'console.success',
+      name: 'ConsoleSuccess',
       fileName: 'index',
       formats: ['umd']
     },
@@ -12,7 +12,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Ensure the UMD global name matches the original
-        name: 'console.success'
+        name: 'ConsoleSuccess',
+        // Add proper UMD wrapper
+        format: 'umd',
+        exports: 'default'
       }
     },
     // Minify the output to match the original compressed size
@@ -29,7 +32,22 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
-      reportsDirectory: './vitest-coverage'
+      reportsDirectory: './vitest-coverage',
+      include: ['src/**/*.js'],
+      exclude: [
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/tests/**',
+        '**/test-results/**',
+        '**/playwright-report/**',
+        '**/vitest-coverage/**',
+        '**/*.test.js',
+        '**/*.test.ts',
+        '**/*.config.js',
+        '**/*.config.ts',
+        '**/playwright.config.ts',
+        '**/vite.config.js'
+      ]
     },
     exclude: ['**/node_modules/**', '**/dist/**', '**/*.test.ts']
   }

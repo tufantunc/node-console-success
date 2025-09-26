@@ -10,7 +10,7 @@ const data = {
     reset: isBrowser ? "" : "\x1b[0m"
 };
 
-console.success = function(args) {
+const successFunction = function(args) {
     if (isBrowser) {
         console.log(`%c ${data.icon} ` + `%c ${args}`, `${data.greenBg} ${data.whiteFg}`, data.greenFg);
     } else {
@@ -18,4 +18,13 @@ console.success = function(args) {
     }
 };
 
-module.exports = console.success;
+// Assign to console.success
+console.success = successFunction;
+
+// For browser environments, also make it available globally
+if (isBrowser && typeof window !== 'undefined') {
+    window.consoleSuccess = successFunction;
+}
+
+// Export for module systems
+export default successFunction;

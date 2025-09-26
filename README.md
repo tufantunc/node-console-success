@@ -49,6 +49,10 @@ console.success('Hello from the browser!');
 
 ## 🎯 Examples
 
+### Sample Output
+![Sample Output](assets/sample.jpg)
+
+### Code Examples
 ```javascript
 // Basic usage
 console.success('Operation completed');

@@ -12,7 +12,7 @@
 
 - 🎨 **Colored output** with green styling and checkmark icons
 - 🌐 **Cross-platform** - works in Node.js and browsers
-- 📦 **Tiny size** - only 515 bytes (0.31 kB gzipped)
+- 📦 **Tiny size** - only 900 bytes (0.48 kB gzipped)
 - 🚀 **Zero dependencies** - lightweight and fast
 - 🔧 **Easy to use** - simple API, works out of the box
 
@@ -21,6 +21,17 @@
 ```bash
 npm install console-success
 ```
+
+## ⚠️ Browser Limitations
+
+When using `console.success()` in browser environments, objects and arrays are converted to JSON strings:
+
+```javascript
+console.success({status: 'ok'});  // Browser: {"status":"ok"} | Node.js: { status: 'ok' }
+console.success([1, 2, 3]);        // Browser: [1,2,3] | Node.js: [ 1, 2, 3 ]
+```
+
+This is a browser console limitation with styled logging. The Node.js version preserves full object formatting.
 
 ## 🚀 Usage
 
@@ -76,8 +87,8 @@ async function fetchData() {
 
 ## 📊 Bundle Size
 
-- **Minified**: 515 bytes
-- **Gzipped**: 0.31 kB
+- **Minified**: 900 bytes (0.90 kB)
+- **Gzipped**: 0.48 kB
 - **Dependencies**: 0
 
 ## 🛠️ Development

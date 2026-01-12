@@ -10,11 +10,23 @@ const data = {
     reset: isBrowser ? "" : "\x1b[0m"
 };
 
-const successFunction = function(args) {
+const successFunction = function(...args) {
     if (isBrowser) {
-        console.log(`%c ${data.icon} ` + `%c ${args}`, `${data.greenBg} ${data.whiteFg}`, data.greenFg);
+        const argsArray = args.map(arg => {
+            if (arg === null) return 'null';
+            if (arg === undefined) return 'undefined';
+            if (typeof arg === 'object') {
+                try {
+                    return JSON.stringify(arg);
+                } catch (e) {
+                    return '[Circular/Object]';
+                }
+            }
+            return String(arg);
+        });
+        console.log(`%c ${data.icon} ` + `%c ${argsArray.join(' ')}`, `${data.greenBg} ${data.whiteFg}`, data.greenFg);
     } else {
-        console.log(data.greenBg + data.whiteFg, data.icon, data.reset, data.greenFg, ...arguments, data.reset);
+        console.log(data.greenBg + data.whiteFg, data.icon, data.reset, data.greenFg, ...args, data.reset);
     }
 };
 

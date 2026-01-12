@@ -5,7 +5,7 @@ export default defineConfig({
     lib: {
       entry: 'src/index.js',
       name: 'ConsoleSuccess',
-      fileName: 'index',
+      fileName: () => 'index.js',
       formats: ['umd']
     },
     outDir: 'dist',
@@ -22,7 +22,7 @@ export default defineConfig({
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: false, // Keep console statements
+        drop_console: false,
         drop_debugger: true
       }
     }

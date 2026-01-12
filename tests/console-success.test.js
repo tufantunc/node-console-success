@@ -94,8 +94,110 @@ describe("Console.success Node.js functionality", () => {
         // In Node.js, isBrowser should be false, so browser-specific code should not run
         const isBrowser = typeof window !== 'undefined' && typeof window.document !== 'undefined';
         expect(isBrowser).toBe(false);
-        
+
         // window.consoleSuccess should not be defined in Node.js
         expect(typeof window).toBe('undefined');
+    });
+
+    test("should handle null value", () => {
+        console.success(null);
+
+        expect(consoleSpy).toHaveBeenCalledWith(
+            expect.stringContaining('\x1b[42m'),
+            expect.stringContaining('✓'),
+            expect.stringContaining('\x1b[0m'),
+            expect.stringContaining('\x1b[32m'),
+            null,
+            expect.stringContaining('\x1b[0m')
+        );
+    });
+
+    test("should handle undefined value", () => {
+        console.success(undefined);
+
+        expect(consoleSpy).toHaveBeenCalledWith(
+            expect.stringContaining('\x1b[42m'),
+            expect.stringContaining('✓'),
+            expect.stringContaining('\x1b[0m'),
+            expect.stringContaining('\x1b[32m'),
+            undefined,
+            expect.stringContaining('\x1b[0m')
+        );
+    });
+
+    test("should handle circular reference object", () => {
+        const circularObj = {name: 'test'};
+        circularObj.self = circularObj;
+
+        console.success(circularObj);
+
+        expect(consoleSpy).toHaveBeenCalled();
+        const callArgs = consoleSpy.mock.calls[0];
+        expect(callArgs[4]).toBe(circularObj);
+    });
+
+    test("should handle function as argument", () => {
+        const testFn = function() { return 42; };
+
+        console.success(testFn);
+
+        expect(consoleSpy).toHaveBeenCalledWith(
+            expect.stringContaining('\x1b[42m'),
+            expect.stringContaining('✓'),
+            expect.stringContaining('\x1b[0m'),
+            expect.stringContaining('\x1b[32m'),
+            testFn,
+            expect.stringContaining('\x1b[0m')
+        );
+    });
+
+    test("should handle number", () => {
+        console.success(42);
+
+        expect(consoleSpy).toHaveBeenCalledWith(
+            expect.stringContaining('\x1b[42m'),
+            expect.stringContaining('✓'),
+            expect.stringContaining('\x1b[0m'),
+            expect.stringContaining('\x1b[32m'),
+            42,
+            expect.stringContaining('\x1b[0m')
+        );
+    });
+
+    test("should handle boolean values", () => {
+        console.success(true, false);
+
+        expect(consoleSpy).toHaveBeenCalledWith(
+            expect.stringContaining('\x1b[42m'),
+            expect.stringContaining('✓'),
+            expect.stringContaining('\x1b[0m'),
+            expect.stringContaining('\x1b[32m'),
+            true,
+            false,
+            expect.stringContaining('\x1b[0m')
+        );
+    });
+
+    test("should handle deeply nested object", () => {
+        const nestedObj = {
+            level1: {
+                level2: {
+                    level3: {
+                        value: 'deep'
+                    }
+                }
+            }
+        };
+
+        console.success(nestedObj);
+
+        expect(consoleSpy).toHaveBeenCalledWith(
+            expect.stringContaining('\x1b[42m'),
+            expect.stringContaining('✓'),
+            expect.stringContaining('\x1b[0m'),
+            expect.stringContaining('\x1b[32m'),
+            nestedObj,
+            expect.stringContaining('\x1b[0m')
+        );
     });
 });

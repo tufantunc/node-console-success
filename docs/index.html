@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>console.success — Colored success logging for Node.js &amp; Browser</title>
+    <meta name="description" content="A tiny zero-dependency library that adds console.success() for logging colored success messages with checkmark icons in Node.js and browsers. Only ~880 bytes.">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Grain / scanline overlay -->
+    <div class="grain" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- ============ NAV ============ -->
+    <header class="nav">
+        <a href="#top" class="brand" aria-label="console.success home">
+            <span class="brand-prompt">$</span>
+            <span class="brand-name">console<span class="brand-dot">.</span>success</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+            <a href="#demo">Demo</a>
+            <a href="#install">Install</a>
+            <a href="#usage">Usage</a>
+            <a href="#features">Features</a>
+            <a href="https://github.com/tufantunc/node-console-success" class="nav-gh" rel="noopener">GitHub ↗</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <!-- ============ HERO ============ -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="kicker reveal"><span class="kicker-dot"></span> v1.1.1 · zero dependencies · ~880 bytes</p>
+                    <h1 class="reveal">
+                        Log success<br>
+                        <span class="accent">like you mean it.</span>
+                    </h1>
+                    <p class="lede reveal">
+                        <code>console.success()</code> prints green, checkmarked messages in your terminal
+                        <em>and</em> your browser console. One line. Zero config. Cross-platform.
+                    </p>
+                    <div class="hero-cta reveal">
+                        <a href="#install" class="btn btn-primary">Get started</a>
+                        <a href="#demo" class="btn btn-ghost">Try the live demo ↓</a>
+                    </div>
+                    <div class="hero-badges reveal">
+                        <a href="https://npmjs.org/package/console-success" rel="noopener"><img src="https://img.shields.io/npm/v/console-success.svg" alt="npm version"></a>
+                        <a href="https://npmjs.org/package/console-success" rel="noopener"><img src="https://img.shields.io/npm/dm/console-success.svg" alt="npm downloads"></a>
+                        <a href="https://opensource.org/licenses/MIT" rel="noopener"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+                    </div>
+                </div>
+
+                <!-- Mock terminal showing the output -->
+                <div class="hero-term reveal" aria-hidden="true">
+                    <div class="term-chrome">
+                        <span class="term-dot td-r"></span>
+                        <span class="term-dot td-y"></span>
+                        <span class="term-dot td-g"></span>
+                        <span class="term-title">~/project — node</span>
+                    </div>
+                    <pre class="term-body"><span class="t-muted">❯ node app.js</span>
+<span class="t-success-badge"> ✓ </span> Build complete
+<span class="t-success-badge"> ✓ </span> Deployed to production
+<span class="t-success-badge"> ✓ </span> 0 errors found
+<span class="t-cursor">▋</span></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ INTERACTIVE DEMO ============ -->
+        <section class="demo" id="demo">
+            <div class="section-head">
+                <span class="section-num">01</span>
+                <h2>Live, interactive demo</h2>
+                <p class="section-sub">
+                    This runs the <strong>real</strong> <code>console-success</code> library loaded from the CDN.
+                    Open your browser DevTools console to see the styled output, and watch it mirrored below.
+                </p>
+            </div>
+
+            <div class="demo-wrap">
+                <!-- input side -->
+                <div class="demo-input-col">
+                    <div class="term-chrome small">
+                        <span class="term-dot td-r"></span>
+                        <span class="term-dot td-y"></span>
+                        <span class="term-dot td-g"></span>
+                        <span class="term-title">playground.js</span>
+                    </div>
+                    <div class="playground">
+                        <label for="demo-input" class="visually-hidden">Arguments to pass to console.success</label>
+                        <textarea id="demo-input" spellcheck="false" autocomplete="off" rows="5">"Deployment complete", "42ms"</textarea>
+                        <div class="play-controls">
+                            <button type="button" class="btn btn-primary btn-run" data-action="run">▶ Run console.success()</button>
+                            <button type="button" class="btn btn-ghost btn-clear" data-action="clear">Clear</button>
+                        </div>
+                        <p class="play-hint">Enter JavaScript values, comma-separated. Objects &amp; arrays are supported.</p>
+                        <div class="presets">
+                            <span class="presets-label">Try:</span>
+                            <button type="button" class="chip" data-preset="string">"Hello world"</button>
+                            <button type="button" class="chip" data-preset="object">{ status: 'ok', count: 3 }</button>
+                            <button type="button" class="chip" data-preset="array">['a','b','c']</button>
+                            <button type="button" class="chip" data-preset="number">42</button>
+                            <button type="button" class="chip" data-preset="multi">"Task", "done", true</button>
+                            <button type="button" class="chip" data-preset="null">null</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- output side -->
+                <div class="demo-output-col">
+                    <div class="term-chrome small">
+                        <span class="term-dot td-r"></span>
+                        <span class="term-dot td-y"></span>
+                        <span class="term-dot td-g"></span>
+                        <span class="term-title">console output</span>
+                        <span class="term-status" id="term-status">idle</span>
+                    </div>
+                    <div id="terminal-output" class="term-body live-output" aria-live="polite">
+                        <p class="placeholder">Output appears here. Hit <kbd>Run</kbd> to call <code>console.success()</code>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="devtools-nudge">💡 Also open DevTools → Console to see the styled, colored log rendered natively by your browser.</p>
+        </section>
+
+        <!-- ============ INSTALL ============ -->
+        <section class="install" id="install">
+            <div class="section-head">
+                <span class="section-num">02</span>
+                <h2>Installation</h2>
+                <p class="section-sub">Pick your package manager. It's tiny, so installing is instant.</p>
+            </div>
+
+            <div class="cmd-grid">
+                <div class="cmd-card">
+                    <div class="cmd-head"><span class="cmd-tag">npm</span><button class="copy-btn" data-copy="npm install console-success">copy</button></div>
+                    <pre class="cmd-line"><code>npm install console-success</code></pre>
+                </div>
+                <div class="cmd-card">
+                    <div class="cmd-head"><span class="cmd-tag">pnpm</span><button class="copy-btn" data-copy="pnpm add console-success">copy</button></div>
+                    <pre class="cmd-line"><code>pnpm add console-success</code></pre>
+                </div>
+                <div class="cmd-card">
+                    <div class="cmd-head"><span class="cmd-tag">yarn</span><button class="copy-btn" data-copy="yarn add console-success">copy</button></div>
+                    <pre class="cmd-line"><code>yarn add console-success</code></pre>
+                </div>
+                <div class="cmd-card">
+                    <div class="cmd-head"><span class="cmd-tag">CDN</span><button class="copy-btn" data-copy='&lt;script src=&quot;https://unpkg.com/console-success@latest/dist/index.js&quot;&gt;&lt;/script&gt;'>copy</button></div>
+                    <pre class="cmd-line"><code>&lt;script src="https://unpkg.com/console-success@latest/dist/index.js"&gt;&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ USAGE ============ -->
+        <section class="usage" id="usage">
+            <div class="section-head">
+                <span class="section-num">03</span>
+                <h2>Usage</h2>
+                <p class="section-sub">Same API everywhere. Import once, call <code>console.success()</code> anywhere.</p>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Usage environments">
+                <button role="tab" class="tab active" data-tab="node" aria-selected="true">Node.js</button>
+                <button role="tab" class="tab" data-tab="esm" aria-selected="false">Browser · ESM</button>
+                <button role="tab" class="tab" data-tab="script" aria-selected="false">Browser · Script tag</button>
+            </div>
+
+            <div class="tab-panels">
+                <div class="tab-panel active" data-panel="node">
+<div class="code-block"><pre><code><span class="c-key">const</span> <span class="c-fn">'console-success'</span>; <span class="c-com">// attaches console.success</span>
+
+<span class="c-fn">console</span>.<span class="c-method">success</span>(<span class="c-str">'Task completed successfully!'</span>);
+<span class="c-fn">console</span>.<span class="c-method">success</span>(<span class="c-key">new</span> <span class="c-fn">Date</span>()); <span class="c-com">// works with any data type</span></code></pre></div>
+                </div>
+                <div class="tab-panel" data-panel="esm">
+<div class="code-block"><pre><code><span class="c-key">import</span> <span class="c-str">'console-success'</span>;
+
+<span class="c-fn">console</span>.<span class="c-method">success</span>(<span class="c-str">'Hello from the browser!'</span>);</code></pre></div>
+                </div>
+                <div class="tab-panel" data-panel="script">
+<div class="code-block"><pre><code><span class="c-com">&lt;!-- drop-in, no build step --&gt;</span>
+&lt;<span class="c-fn">script</span> <span class="c-attr">src</span>=<span class="c-str">"https://unpkg.com/console-success@latest/dist/index.js"</span>&gt;&lt;/<span class="c-fn">script</span>&gt;
+&lt;<span class="c-fn">script</span>&gt;
+  <span class="c-fn">console</span>.<span class="c-method">success</span>(<span class="c-str">'Hello world!'</span>);
+&lt;/<span class="c-fn">script</span>&gt;</code></pre></div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <strong>⚠️ Browser note:</strong> In the browser console, objects &amp; arrays are shown as JSON strings
+                (<code>{"status":"ok"}</code>) because styled logs can't render inspectable objects.
+                Node.js preserves full object formatting.
+            </div>
+        </section>
+
+        <!-- ============ FEATURES ============ -->
+        <section class="features" id="features">
+            <div class="section-head">
+                <span class="section-num">04</span>
+                <h2>Why console.success?</h2>
+                <p class="section-sub">Small enough to forget about, useful enough to reach for every day.</p>
+            </div>
+
+            <div class="feature-grid">
+                <article class="feature">
+                    <div class="feature-ico">🎨</div>
+                    <h3>Colored output</h3>
+                    <p>Green styling with a checkmark icon — ANSI codes in Node, CSS styles in the browser. Resets cleanly.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-ico">🌐</div>
+                    <h3>Cross-platform</h3>
+                    <p>One library, identical API for Node.js and the browser. Auto-detects its environment.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-ico">📦</div>
+                    <h3>Tiny footprint</h3>
+                    <p>Roughly <strong>880 bytes</strong> minified, ~0.47&nbsp;kB gzipped. No runtime dependencies at all.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-ico">🚀</div>
+                    <h3>Zero config</h3>
+                    <p>Import it once. <code>console.success</code> is globally available — no wrappers, no setup.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-ico">🛡️</div>
+                    <h3>Safe with edge cases</h3>
+                    <p>Handles <code>null</code>, <code>undefined</code>, functions, numbers and even circular references without crashing.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-ico">🧪</div>
+                    <h3>Well tested</h3>
+                    <p>Unit tests (Vitest) and browser E2E tests (Playwright) keep both environments green.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ STATS STRIP ============ -->
+        <section class="stats">
+            <div class="stat"><span class="stat-num">~880<span class="stat-unit">B</span></span><span class="stat-label">minified</span></div>
+            <div class="stat"><span class="stat-num">0.47<span class="stat-unit">kB</span></span><span class="stat-label">gzipped</span></div>
+            <div class="stat"><span class="stat-num">0</span><span class="stat-label">dependencies</span></div>
+            <div class="stat"><span class="stat-num">2</span><span class="stat-label">environments</span></div>
+        </section>
+
+        <!-- ============ CTA ============ -->
+        <section class="cta">
+            <h2>Ready to make success loud?</h2>
+            <div class="cta-cmd">
+                <code>npm install console-success</code>
+                <button class="copy-btn dark" data-copy="npm install console-success">copy</button>
+            </div>
+            <div class="cta-links">
+                <a href="https://github.com/tufantunc/node-console-success" rel="noopener">View on GitHub ↗</a>
+                <a href="https://npmjs.org/package/console-success" rel="noopener">npm package ↗</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-prompt">$</span> console<span class="brand-dot">.</span>success
+            </div>
+            <p class="footer-meta">MIT © <a href="https://tufantunc.com" rel="noopener">Tufan Tunç</a></p>
+            <nav class="footer-links" aria-label="Footer">
+                <a href="https://github.com/tufantunc/node-console-success" rel="noopener">GitHub</a>
+                <a href="https://npmjs.org/package/console-success" rel="noopener">npm</a>
+                <a href="https://github.com/tufantunc/node-console-success#readme" rel="noopener">Docs</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Real library, from CDN -->
+    <script src="https://unpkg.com/console-success@latest/dist/index.js"></script>
+    <script src="js/demo.js"></script>
+</body>
+</html>

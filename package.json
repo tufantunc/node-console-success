@@ -1,6 +1,6 @@
 {
   "name": "console-success",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "console.success function logs colored messages with success icon on terminal and browser console.",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "test:all": "npm run test && npm run test:e2e"
+    "test:all": "npm run test && npm run test:e2e",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -32,13 +33,13 @@
   "bugs": {
     "url": "https://github.com/tufantunc/node-console-success/issues"
   },
-  "homepage": "https://github.com/tufantunc/node-console-success#readme",
+  "homepage": "https://tufantunc.github.io/node-console-success/",
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
-    "@vitest/coverage-v8": "^4.0.17",
+    "@playwright/test": "^1.61.1",
+    "@vitest/coverage-v8": "^4.1.9",
     "husky": "^9.1.7",
-    "terser": "^5.44.1",
-    "vite": "^7.3.1",
-    "vitest": "^4.0.17"
+    "terser": "^5.48.0",
+    "vite": "^8.1.0",
+    "vitest": "^4.1.9"
   }
 }

@@ -12,7 +12,7 @@
 
 - 🎨 **Colored output** with green styling and checkmark icons
 - 🌐 **Cross-platform** - works in Node.js and browsers
-- 📦 **Tiny size** - only 900 bytes (0.48 kB gzipped)
+- 📦 **Tiny size** - only 880 bytes (0.47 kB gzipped)
 - 🚀 **Zero dependencies** - lightweight and fast
 - 🔧 **Easy to use** - simple API, works out of the box
 
@@ -87,8 +87,8 @@ async function fetchData() {
 
 ## 📊 Bundle Size
 
-- **Minified**: 900 bytes (0.90 kB)
-- **Gzipped**: 0.48 kB
+- **Minified**: 880 bytes (0.88 kB)
+- **Gzipped**: 0.47 kB
 - **Dependencies**: 0
 
 ## 🛠️ Development
@@ -116,6 +116,6 @@ MIT © [Tufan Tunç](https://tufantunc.com)
 
 ## 🔗 Links
 
-- [Live Demo](https://codepen.io/tufantunc/pen/XWbggaa)
+- [Live Demo](https://tufantunc.github.io/node-console-success/)
 - [GitHub Repository](https://github.com/tufantunc/node-console-success)
 - [NPM Package](https://npmjs.org/package/console-success)

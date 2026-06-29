@@ -9,12 +9,8 @@ export default defineConfig({
       formats: ['umd']
     },
     outDir: 'dist',
-    rollupOptions: {
+    rolldownOptions: {
       output: {
-        // Ensure the UMD global name matches the original
-        name: 'ConsoleSuccess',
-        // Add proper UMD wrapper
-        format: 'umd',
         exports: 'default'
       }
     },
